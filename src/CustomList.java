@@ -54,13 +54,9 @@ public class CustomList {
         }
     }
 
-    public void sort() {
-        Collections.sort(this._numbers);
-    }
-
     public Map<Integer, Integer> getOccurrences() {
-        Map<Integer, Integer> occurrencesHashMap = new LinkedHashMap<>();
         sort();
+        Map<Integer, Integer> occurrencesHashMap = new LinkedHashMap<>();
         List<Integer> numbersWithoutDuplicates = new ArrayList<>(new HashSet<>(this._numbers));
 
         for (Integer number : numbersWithoutDuplicates) {
@@ -72,6 +68,10 @@ public class CustomList {
         }
 
         return occurrencesHashMap;
+    }
+
+    public void sort() {
+        Collections.sort(this._numbers);
     }
 
     public int getOccurrences(int number) {
