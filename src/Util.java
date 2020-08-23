@@ -14,4 +14,8 @@ public class Util {
             e.printStackTrace();
         }
     }
+
+    public static boolean isEndOrEmpty(String value) {
+        return value.equals(Constant.END) || value.equals(Constant.EMPTY_STRING);
+    }
 }
