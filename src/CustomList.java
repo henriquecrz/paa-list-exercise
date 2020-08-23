@@ -21,13 +21,16 @@ public class CustomList {
 
             while (scanner.hasNextLine()) {
                 String line = scanner.nextLine();
-                line.replace(" ", "");
+                
+                line.trim();
 
-                if (line.toLowerCase() != Constant.END) {
+                line = line.toLowerCase();
+
+                if (!Util.isEndOrEmpty(line)) {
                     try {
                         add(Integer.parseInt(line));
                     } catch (NumberFormatException e) {
-                        e.printStackTrace();
+                        System.out.println("Cannot convert \"" + line + "\" to Integer.");
                     }
                 } else {
                     break;
